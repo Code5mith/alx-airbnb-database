@@ -15,4 +15,4 @@ WITH PropertyBookingCount AS (
     booking_count,
     RANK() OVER (ORDER BY booking_count DESC) AS property_rank
 FROM PropertyBookingCount
-ORDER BY proper ty_rank ASC;
+ORDER BY property_rank ASC;
