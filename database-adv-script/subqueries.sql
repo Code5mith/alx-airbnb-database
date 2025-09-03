@@ -16,4 +16,4 @@ SELECT * FROM User u WHERE (
   FROM Booking b
   WHERE
     b.user_id = u.user_id
-);
+) > 3;
