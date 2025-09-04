@@ -1,6 +1,5 @@
 EXPLAIN
-SELECT * FROM Booking b, "User" u , Property p, Payment p2  
-	where b.user_id = u.user_id AND p.property_id = b.property_id  AND p2.booking_id = b.booking_id;
+SELECT * FROM Booking b, "User" u , Property p, Payment p2 WHERE b.user_id = u.user_id AND p.property_id = b.property_id  AND p2.booking_id = b.booking_id;
 
 EXPLAIN
 SELECT
