@@ -17,3 +17,6 @@ CREATE INDEX idx_review_property_id ON Review (property_id);
 
 -- Add an index on a frequently searched column like the 'location' in the Property table.
 CREATE INDEX idx_property_location ON Property (location);
+
+
+EXPLAIN SELECT * FROM "User" u WHERE u."role" == "guest"; ANALYZE
