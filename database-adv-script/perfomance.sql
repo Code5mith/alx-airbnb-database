@@ -1,15 +1,6 @@
 EXPLAIN
-SELECT
-    *
-FROM
-    Booking b 
-FULL OUTER JOIN
-    Payment py ON b.booking_id == py.booking_id 
-FULL OUTER JOIN
-    Property pr ON b.property_id = pr.property_id 
-FULL OUTER JOIN
-    "User" u ON b.user_id = u.user_id;
-
+SELECT * FROM Booking b, "User" u , Property p, Payment p2  
+	where b.user_id = u.user_id AND p.property_id = b.property_id  AND p2.booking_id = b.booking_id;
 
 EXPLAIN
 SELECT
