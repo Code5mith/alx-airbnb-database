@@ -3,7 +3,10 @@
 -- Index for the User table's primary key
 
 -- Before indexing 
-EXPLAIN SELECT * FROM "User" u WHERE u."role" == "guest"; ANALYZE
+EXPLAIN
+SELECT * FROM "User" u WHERE u."role" = "guest";
+ANALYZE
+
 
 CREATE INDEX idx_user_id ON User (user_id);
 
@@ -23,4 +26,7 @@ CREATE INDEX idx_review_property_id ON Review (property_id);
 CREATE INDEX idx_property_location ON Property (location);
 
 -- After indexing 
-EXPLAIN SELECT * FROM "User" u WHERE u."role" == "guest"; ANALYZE
+EXPLAIN
+SELECT * FROM "User" u WHERE u."role" = "guest";
+ANALYZE
+
