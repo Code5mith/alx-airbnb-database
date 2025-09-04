@@ -2,10 +2,24 @@
 
 -- Index for the User table's primary key
 
--- Before indexing 
-EXPLAIN
-SELECT * FROM "User" u WHERE u."role" = "guest";
-ANALYZE
+-- 1. Find the total number of bookings made by each user.--1, Before indexing 
+EXPLAIN ANALYZE
+SELECT
+    user_id,
+    COUNT(*) AS total_bookings
+FROM
+    Booking
+GROUP BY
+
+-- 2. Find the total number of reviews made on each property.
+EXPLAIN ANALYZE
+SELECT
+    property_id,
+    COUNT(*) AS total_reviews
+FROM
+    Review
+GROUP BY
+    property_id;   user_id;
 
 
 CREATE INDEX idx_user_id ON User (user_id);
@@ -25,8 +39,22 @@ CREATE INDEX idx_review_property_id ON Review (property_id);
 -- Add an index on a frequently searched column like the 'location' in the Property table.
 CREATE INDEX idx_property_location ON Property (location);
 
--- After indexing 
-EXPLAIN
-SELECT * FROM "User" u WHERE u."role" = "guest";
-ANALYZE
+-- 1. Find the total number of bookings made by each user.--1, Before indexing 
+EXPLAIN ANALYZE
+SELECT
+    user_id,
+    COUNT(*) AS total_bookings
+FROM
+    Booking
+GROUP BY
+
+-- 2. Find the total number of reviews made on each property.
+EXPLAIN ANALYZE
+SELECT
+    property_id,
+    COUNT(*) AS total_reviews
+FROM
+    Review
+GROUP BY
+    property_id;   user_id;
 
